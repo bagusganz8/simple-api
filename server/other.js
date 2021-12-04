@@ -17,16 +17,16 @@ router.get('/ttp', async(req, res) => {
   var text = req.query.text
   if (!text) return res.json({ 'message': 'masukan parameter text!'})
     const data = await getBuffer(`https://rya-kun.herokuapp.com/api/ttp?text=${text}`)
-    await fs.writeFileSync(__path +'/tmp/ttp.png', data)
-    await res.sendFile(__path +'/tmp/ttp.png')
+    await fs.writeFileSync(__path +'/tmp/ttp.webp', data)
+    await res.sendFile(__path +'/tmp/ttp.webp')
 })
 
 router.get('/attp', async(req, res) => {
   var text = req.query.text
   if (!text) return res.json({ 'message': 'masukan parameter text!'})
     const data = await getBuffer(`https://rya-kun.herokuapp.com/api/attp?text=${text}`)
-    await fs.writeFileSync(__path +'/tmp/attp.png', data)
-    await res.sendFile(__path +'/tmp/attp.png')
+    await fs.writeFileSync(__path +'/tmp/attp.webp', data)
+    await res.sendFile(__path +'/tmp/attp.webp')
 })
 
 
