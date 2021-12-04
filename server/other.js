@@ -16,7 +16,7 @@ router.get('/nulis', async(req, res) => {
 router.get('/ttp', async(req, res) => {
   var text = req.query.text
   if (!text) return res.json({ 'message': 'masukan parameter text!'})
-    const data = await getBuffer(`https://rya-kun.herokuapp.com/api/ttp?text=${text}`)
+    const data = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${text}`)
     await fs.writeFileSync(__path +'/tmp/ttp.webp', data)
     await res.sendFile(__path +'/tmp/ttp.webp')
 })
@@ -24,7 +24,7 @@ router.get('/ttp', async(req, res) => {
 router.get('/attp', async(req, res) => {
   var text = req.query.text
   if (!text) return res.json({ 'message': 'masukan parameter text!'})
-    const data = await getBuffer(`https://rya-kun.herokuapp.com/api/attp?text=${text}`)
+    const data = await getBuffer(`https://api.xteam.xyz/attp?file&text=${text}`)
     await fs.writeFileSync(__path +'/tmp/attp.webp', data)
     await res.sendFile(__path +'/tmp/attp.webp')
 })
