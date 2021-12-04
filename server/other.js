@@ -17,8 +17,8 @@ router.get('/ttp', async(req, res) => {
   var text = req.query.text
   if (!text) return res.json({ 'message': 'masukan parameter text!'})
     const data = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${text}`)
-    await fs.writeFileSync(__path +'/tmp/ttp.webp', data)
-    await res.sendFile(__path +'/tmp/ttp.webp')
+    await fs.writeFileSync(__path +'/tmp/ttp.jpg', data)
+    await res.sendFile(__path +'/tmp/ttp.jpg')
 })
 
 router.get('/attp', async(req, res) => {
